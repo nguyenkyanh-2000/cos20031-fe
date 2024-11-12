@@ -1,7 +1,7 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/modules/ui/tabs";
 import { PlusCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import useProductsNavigate from "@/hooks/navigation/useProductsNavigate";
+import { Button } from "@/modules/ui/button";
+import useProductsNavigate from "@/modules/products/useProductsNavigate";
 
 export default function Products() {
   const navigateToProducts = useProductsNavigate();

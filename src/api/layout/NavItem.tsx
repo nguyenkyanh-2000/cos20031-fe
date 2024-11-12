@@ -1,8 +1,4 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/modules/ui/tooltip";
 import clsx from "clsx";
 import { Link, useLocation } from "react-router-dom";
 

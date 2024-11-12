@@ -1,12 +1,17 @@
 import {
   Home,
   LineChart,
+  MessageSquare,
   Package,
   Settings,
   ShoppingCart,
   Users2,
 } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../../modules/ui/tooltip";
 import { Link } from "react-router-dom";
 import { NavItem } from "./NavItem";
 
@@ -37,6 +42,10 @@ function DesktopNav(): React.ReactElement {
 
         <NavItem href="/analytics" label="Analytics">
           <LineChart className="h-5 w-5" />
+        </NavItem>
+
+        <NavItem href="/chat" label="Chat">
+          <MessageSquare className="h-5 w-5" />
         </NavItem>
       </nav>
       <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">

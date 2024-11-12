@@ -2,7 +2,7 @@ import { writeFile } from "fs/promises";
 import openapiTS, { astToString } from "openapi-typescript";
 
 const generateTypes = async () => {
-  const swaggerApiUrl = process.env.SWAGGER_API_URL;
+  const swaggerApiUrl = import.meta.env.VITE_SWAGGER_API_URL;
   if (!swaggerApiUrl) {
     return;
   }
