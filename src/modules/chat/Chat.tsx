@@ -4,6 +4,8 @@ import { ChatViewMessages } from "./ChatViewMessages";
 import { ChatViewInput } from "./ChatViewInput";
 import { useParams } from "react-router-dom";
 import { Button } from "../ui/button";
+import { paths } from "@/api/types";
+import createClient from "openapi-fetch";
 
 const Chat: FC = () => {
   const { userId } = useParams<{ userId: string }>();
@@ -29,9 +31,26 @@ const Chat: FC = () => {
 
   const items = response.data?.history || [];
 
+  const handleClearChat = async () => {
+    const fetchClient = createClient<paths>({
+      baseUrl: `${import.meta.env.VITE_BACKEND_API_URL}`,
+    });
+
+    await fetchClient.GET("/api/genkit/customer-service/{userId}/finish", {
+      params: {
+        path: {
+          userId,
+        },
+      },
+    });
+  };
+
   return (
     <div className="h-full">
-      <Button className="text-red-600 bg-white hover:bg-white/10">
+      <Button
+        className="text-red-600 bg-white hover:bg-white/10"
+        onClick={handleClearChat}
+      >
         Clear chat
       </Button>
       <ChatViewMessages items={items} />

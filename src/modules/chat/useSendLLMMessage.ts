@@ -13,7 +13,7 @@ export const useSendLLMMessage = () => {
   const queryClient = useQueryClient();
   return client.useMutation("post", "/api/genkit/customer-service", {
     onSuccess: async () => {
-      await queryClient.invalidateQueries();
+      await queryClient.refetchQueries();
     },
   });
 };

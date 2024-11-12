@@ -20,6 +20,6 @@ export const useLLMChatHistoryItems = (userId: string) => {
       },
     },
     // Hacky way to force refetch every 100ms
-    { refetchInterval: 100 }
+    { refetchInterval: 50 }
   );
 };
