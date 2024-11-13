@@ -2,8 +2,6 @@ import { Fragment, useCallback, useEffect, useRef, type FC } from "react";
 
 import { differenceInMilliseconds } from "date-fns";
 
-import type { ANY } from "@/api/types";
-
 import { BaseChatItem } from "./BaseChatItem";
 import { LoadingChatItem } from "./LoadingChatItem";
 import { ModelChatItem } from "./ModelChatItem";
@@ -109,7 +107,7 @@ export const ChatViewMessages: FC<ChatViewMessagesProps> = ({ items }) => {
     >
       {items.map((item, index) => (
         <Fragment key={item.id}>
-          <div id={item.id}>{renderChatHistoryItem(item as ANY, index)}</div>
+          <div id={item.id}>{renderChatHistoryItem(item, index)}</div>
         </Fragment>
       ))}
     </div>
