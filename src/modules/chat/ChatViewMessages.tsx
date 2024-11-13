@@ -99,9 +99,11 @@ export const ChatViewMessages: FC<ChatViewMessagesProps> = ({ items }) => {
     }
   }, [items]);
 
+  if (!items.length) return;
+
   return (
     <div
-      className="relative flex flex-col gap-0 overflow-auto py-2 pb-6 pr-3 [scrollbarColor:rgba(0,0,0,0.2)_transparent]"
+      className="relative flex flex-col gap-0 h-[80vh] overflow-auto py-2 pb-6 pr-3 [scrollbarColor:rgba(0,0,0,0.2)_transparent] flex-grow"
       id={`scrollableMessages}`}
       ref={scrollContainerRef}
     >

@@ -46,16 +46,16 @@ const Chat: FC = () => {
   };
 
   return (
-    <div className="h-full">
+    <div className="flex flex-col">
       <Button
-        className="text-red-600 bg-white hover:bg-white/10"
+        className="text-red-600 bg-white hover:bg-white/10 w-fit"
         onClick={handleClearChat}
       >
         Clear chat
       </Button>
       <ChatViewMessages items={items} />
       {items.length === 0 && (
-        <div className="flex justify-center items-center h-full">
+        <div className="flex justify-center items-center h-[80vh] flex-grow">
           <p className="text-gray-400">No messages yet</p>
         </div>
       )}
